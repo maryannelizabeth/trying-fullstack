@@ -1,18 +1,34 @@
-import { getFruits } from '../apis/fruits'
+import { getNames, addName } from '../apis/names'
 
-export const SET_FRUITS = 'SET_FRUITS'
+export const SET_NAMES = 'SET_NAMES'
+export const ADD_NAME = 'ADD_NAME'
 
-export function setFruits(fruits) {
+export function setNames(names) {
   return {
-    type: SET_FRUITS,
-    payload: fruits,
+    type: SET_NAMES,
+    payload: names,
   }
 }
 
-export function fetchFruits() {
+export function fetchNames() {
   return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
+    return getNames().then((names) => {
+      dispatch(setNames(names))
+    })
+  }
+}
+
+export function addWord(name) {
+  return {
+    type: ADD_NAME,
+    payload: name,
+  }
+}
+
+export function fetchName(name) {
+  return (dispatch) => {
+    return addName(name).then((name) => {
+      dispatch(addWord(name))
     })
   }
 }

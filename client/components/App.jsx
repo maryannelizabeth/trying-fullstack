@@ -1,24 +1,26 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { fetchFruits } from '../actions'
+import Form from './Form'
+import { fetchNames } from '../actions'
 
 function App() {
-  const fruits = useSelector((state) => state.fruits)
+  const names = useSelector((state) => state.names)
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchFruits())
+    dispatch(fetchNames())
   }, [])
+  console.log(typeof names)
 
   return (
     <>
       <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
+        <h1>Random Generator</h1>
         <ul>
-          {fruits.map((fruit) => (
-            <li key={fruit}>{fruit}</li>
+          {names.map((name) => (
+            <li key={name.id}>{name}</li>
           ))}
         </ul>
+        <Form />
       </div>
     </>
   )
