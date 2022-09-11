@@ -16,8 +16,8 @@ function App() {
       <div className="app">
         <h1>Random Generator</h1>
         <ul>
-          {names.map((name) => (
-            <li key={name.id}>{name}</li>
+          {names.map((name, index) => (
+            <li key={index}>{name}</li>
           ))}
         </ul>
         <Form />
