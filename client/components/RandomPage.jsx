@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Form from './Form'
 import RandomStudent from './RandomStudent'
 import { fetchNames } from '../actions'
+import Nav from './Nav'
 
 function RandomGenerator() {
   const names = useSelector((state) => state.names)
@@ -14,6 +15,7 @@ function RandomGenerator() {
 
   return (
     <>
+    <Nav />
       <div className="app">
         <h1>Random Generator</h1>
         <ul>
