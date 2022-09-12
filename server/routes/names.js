@@ -18,8 +18,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const namesData = req.body
   const name = req.body.name
-  console.log(req.body)
-  console.log('namesdata', typeof namesData)
+  //console.log(req.body)
+  //console.log('names', typeof name)
   db.addName(namesData)
     .then((ids) => {
       const id = ids[0]
