@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   db.getNames()
     .then((results) => {
-      res.json({ names: results.map((name) => name.name) })
+      res.json({ results })
     })
     .catch((err) => {
       console.log(err)
@@ -17,12 +17,13 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const namesData = req.body
+  const name = req.body.name
   console.log(req.body)
   console.log('namesdata', typeof namesData)
   db.addName(namesData)
     .then((ids) => {
-      const newName = ids[0]
-      res.json([...namesData, newName])
+      const id = ids[0]
+      res.json({ id: id, name: name })
     })
     .catch((err) => {
       console.error(err.message)

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Form from './Form'
+import RandomStudent from './RandomStudent'
 import { fetchNames } from '../actions'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           ))}
         </ul>
         <Form />
+        <RandomStudent />
       </div>
     </>
   )
