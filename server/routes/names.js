@@ -4,7 +4,7 @@ const db = require('../db/names')
 
 const router = express.Router()
 
-router.get('/randomgenerator', (req, res) => {
+router.get('/', (req, res) => {
   db.getNames()
     .then((results) => {
       res.json({ results })
@@ -16,7 +16,7 @@ router.get('/randomgenerator', (req, res) => {
     })
 })
 
-router.post('/randomgenerator', (req, res) => {
+router.post('/', (req, res) => {
   const namesData = req.body
   const name = req.body.name
   //console.log(req.body)

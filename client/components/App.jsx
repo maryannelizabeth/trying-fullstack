@@ -1,32 +1,31 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import Form from './Form'
+import RandomStudent from './RandomStudent'
+import { fetchNames } from '../actions'
 
-import Header from './Header'
-import Home from './Home'
+function RandomGenerator() {
+  const names = useSelector((state) => state.names)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchNames())
+  }, [])
+  console.log('names', names)
 
-import DiceHome from './Dice'
-import RollOneDice from './RollOneDice'
-import RollTwoDice from './RollTwoDice'
-import RollThreeDice from './RollThreeDice'
-import RandomGenerator from './RandomGeneratorPage'
-
-import UserTimerInput from './UserTimerInput'
-
-function App() {
   return (
     <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/randomgenerator" element={<RandomGenerator />} />
-        <Route path="/timer" element={<UserTimerInput />} />
-        <Route path="/dice" element={<DiceHome />} />
-        <Route path="/rollonedice" element={<RollOneDice />} />
-        <Route path="/rolltwodice" element={<RollTwoDice />} />
-        <Route path="/rollthreedice" element={<RollThreeDice />} />
-      </Routes>
+      <div className="app">
+        <h1>Random Generator</h1>
+        <ul>
+          {names.map((name) => (
+            <li key={name.id}>{name.name}</li>
+          ))}
+        </ul>
+        <Form />
+        <RandomStudent />
+      </div>
     </>
   )
 }
 
-export default App
+export default RandomGenerator
