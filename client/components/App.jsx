@@ -4,12 +4,12 @@ import RandomGenerator from './RandomPage'
 import Home from './Home'
 import Header from './Header'
 
-// import DiceHome from './Dice'
-// import RollOneDice from './RollOneDice'
-// import RollTwoDice from './RollTwoDice'
-// import RollThreeDice from './RollThreeDice'
+import DiceHome from './Dice'
+import RollOneDice from './RollOneDice'
+import RollTwoDice from './RollTwoDice'
+import RollThreeDice from './RollThreeDice'
 
-// import UserTimerInput from './UserTimerInput'
+import UserTimerInput from './UserTimerInput'
 function App() {
   // function clickHandler()
 
@@ -19,11 +19,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/randomgenerator" element={<RandomGenerator />} />
-        {/* <Route path="/timer" element={<UserTimerInput />} />
+        <Route path="/timer" element={<UserTimerInput />} />
         <Route path="/dice" element={<DiceHome />} />
         <Route path="/rollonedice" element={<RollOneDice />} />
         <Route path="/rolltwodice" element={<RollTwoDice />} />
-        <Route path="/rollthreedice" element={<RollThreeDice />} /> */}
+        <Route path="/rollthreedice" element={<RollThreeDice />} />
       </Routes>
     </div>
   )
