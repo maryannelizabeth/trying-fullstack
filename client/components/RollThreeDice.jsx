@@ -23,11 +23,11 @@ function RollThreeDice() {
           className="rollDiceButton"
           onClick={() => {
             setImg1Src('./images/dice' + randomNumber1 + '.png')
-            console.log(img1Src)
+         
             setImg2Src('./images/dice' + randomNumber2 + '.png')
-            console.log(img2Src)
+       
             setImg3Src('./images/dice' + randomNumber3 + '.png')
-            console.log(img3Src)
+          
           }}
         >
           Roll Dice!

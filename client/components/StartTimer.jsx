@@ -19,7 +19,7 @@ function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
     updateCountdown()
     setInterval(updateCountdown, 1000)
 
-    console.log('clicked start click')
+
   }
   return (
     <div className="startCountdownButton">

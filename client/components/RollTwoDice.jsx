@@ -19,9 +19,9 @@ function RollTwoDice() {
           className="rollDiceButton"
           onClick={() => {
             setImg1Src('./images/dice' + randomNumber1 + '.png')
-            console.log(img1Src)
+           
             setImg2Src('./images/dice' + randomNumber2 + '.png')
-            console.log(img2Src)
+         
           }}
         >
           Roll Dice!

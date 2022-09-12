@@ -10,7 +10,7 @@ function RandomGenerator() {
   useEffect(() => {
     dispatch(fetchNames())
   }, [])
-  console.log('names', names)
+
 
   return (
     <>

@@ -20,7 +20,7 @@ function UserTimerInput() {
 
   function clickHandler(evt) {
     evt.preventDefault()
-    console.log('click')
+
     setPrint(true)
   }
 
