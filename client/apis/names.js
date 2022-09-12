@@ -4,7 +4,8 @@ const rootUrl = '/api/v1'
 
 export function getNames() {
   return request.get(rootUrl + '/names').then((res) => {
-    return res.body.names
+    console.log('results api', res.body.results)
+    return res.body.results
   })
 }
 

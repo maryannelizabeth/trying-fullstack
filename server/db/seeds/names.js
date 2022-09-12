@@ -4,10 +4,6 @@ exports.seed = function (knex) {
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex('Names').insert([
-        { id: 1, name: 'banana' },
-        { id: 2, name: 'apple' },
-        { id: 3, name: 'feijoa' },
-      ])
+      return knex('Names').insert([])
     })
 }
