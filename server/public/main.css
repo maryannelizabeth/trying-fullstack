@@ -1,0 +1,276 @@
+body {
+  background-color: #FDEEDC;
+  font-family: 'Rubik', sans-serif;
+  
+  }
+  
+  h1{
+    color: #E38B29
+  }
+  
+  /************** HEADER ******************/
+  .header {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+  }
+  
+  .toolkitImg {
+    width: 50px;
+    transform: rotate(15deg);
+    position: relative;
+    top: 10px;
+  }
+  
+  a:link { text-decoration: none; }
+  a:visited { text-decoration: none; }
+  a:hover { text-decoration: none; }
+  a:active { text-decoration: none; }
+  a{
+    color: #E38B29
+  }
+  
+  
+  
+  /************** HOMEPAGE ***************/
+  
+  .homepage{
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+  
+  }
+  
+  .timerDiv {
+    display: flex;
+    width: 150px;
+    height:200px;
+    margin: 20px;
+    font-size: 30;
+    text-align: center;
+  
+  }
+  
+  .diceDiv {
+    display: flex;
+    width: 150px;
+    height:200px;
+    margin: 20px;
+    font-size: 30;
+    text-align: center;
+    }
+  
+   .spinTheWheelDiv {
+    display: flex;
+    width: 150px;
+    height: 200px;
+    margin: 20px;
+    font-size: 30;
+    text-align: center;
+    }
+  
+    .img:hover {
+      transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    }
+  
+  
+    /**** Footer *******/
+    .footer{
+      display: flex;
+      width: 100%;
+      font-size: 8px;
+      text-align: center;
+      margin-top: 150px;
+    }
+    .footerA{
+      color: #FFD8A9;
+    }
+    
+    /******* Dice home page ***********/
+  
+    .dicePage {
+    width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+    }
+  
+    .buttonDiv{
+      width: 100%;
+      height: auto;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+  
+    }
+  
+    .diceButton {
+      margin:auto;
+  
+    
+    }
+  
+    /*******  Dice rolling pages  *********/
+  
+    .rollDiceButtonDiv {
+      display:flex;
+      height: auto;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      margin-top: 30px;
+   
+  
+    }
+  
+    .diceRolling{
+      width: 100%;
+      height: auto;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      margin-left:20%;
+      margin-right:20%;
+    }
+  
+    .twoDiceRolling{
+      width: 100%;
+      height: auto;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-flow: wrap;
+      margin-left:31%;
+      margin-right:31%;
+      
+  
+    }
+  
+    .diceOne{
+      margin-top:20px;
+  
+    }
+  
+    /******   Timer      ********/
+      .clock {
+        position: relative;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 180px;
+        width: 350px;
+        border-radius: 15px;
+        border: 2px solid silver;
+        box-shadow: 0 0 5px 25 px;
+      }
+  
+      .clock section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+  
+      }
+  
+      .clock section p{
+        font-size: 4rem;
+      }
+      .clock section small{
+        color: silver
+      
+      }
+  
+     
+  
+     /************   TIMER USER INPUT COMPONENT  ******************/ 
+      .userInputTimerDiv{
+        width: 100%;
+    height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+      }
+     
+  
+      .secondsLabel{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        text-align: center;
+        margin: 20px;
+      }
+  
+      .minutesLabel{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        text-align: center;
+        margin: 20px;
+      }
+  
+      .setTimeButtonDiv{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        text-align: center;
+        margin: 20px;
+        padding: 20px;
+      }
+  
+      .startCountdownButton{
+        flex-direction: row;
+        justify-content: space-around;
+        flex-flow: wrap;
+        text-align: center;
+        margin: 50px;
+      }
+  
+  
+    /* @media (768px){
+        .diceDiv {
+          width:90%;
+          background-color: pink;
+        }
+        .timerDiv {
+          width:90%;
+        }
+        .spinTheWheelDiv {
+          width:90%;
+        }}
+    
+  
+    @media (min-width:768px){
+      .diceDiv {
+        width:90%;
+      }
+      .timerDiv {
+        width:90%;
+      }
+      .spinTheWheelDiv {
+        width:90%;
+      }}
+  
+    @media (min-width:1200px){
+    .diceDiv {
+      width:40%;
+      background-color: blue;
+    }
+    .timerDiv {
+      width:40%;
+    }
+    .spinTheWheelDiv {
+      width:40%;
+    }}
+     */
+      

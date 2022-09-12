@@ -6,14 +6,14 @@ const router = express.Router()
 
 router.get('/', (req, res) => {
   db.getNames()
-  .then((results) => {
-    res.json({ results })
-    console.log('results', results)
-  })
-  .catch((err) => {
-    console.log(err)
-    res.status(500).json({ message: 'Something went wrong' })
-  })
+    .then((results) => {
+      res.json({ results })
+      console.log('results', results)
+    })
+    .catch((err) => {
+      console.log(err)
+      res.status(500).json({ message: 'Something went wrong' })
+    })
 })
 
 router.post('/', (req, res) => {
