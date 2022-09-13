@@ -8,7 +8,7 @@ const server = express()
 server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
-server.use('/api/v1/names', namesRoutes)
+server.use('/api/v1/names', namesRoutes)  
 
 server.get('*', (req, res) => {
   console.log('server hit!')

@@ -4,22 +4,19 @@ const db = require('../db/names')
 const checkJwt = require('../check-jwt')
 
 const router = express.Router()
-
+// /api/v1/names/
 router.get('/', checkJwt, (req, res) => {
   const userId = req.auth?.sub
-
 
   db.getNames(userId)
     .then((results) => {
       res.json({ results })
-   
     })
     .catch((err) => {
       console.log(err)
       res.status(500).json({ message: 'Something went wrong' })
     })
 })
-
 
 router.post('/', checkJwt, (req, res) => {
   const userId = req.auth?.sub
