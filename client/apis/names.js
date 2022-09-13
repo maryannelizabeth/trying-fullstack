@@ -9,9 +9,21 @@ export function getNames() {
   })
 }
 
-export function addName(name) {
-  return request
+// export function addName(name) {
+//   return request
+//     .post(rootUrl + '/names')
+//     .send({
+//       name: name,
+//     })
+//     .then((res) => res.body)
+// }
+
+// eaovupi;bhudpisorbvuipoaersdbvjkfhbgdsjklgvhy$AGHRFDOIUBVGIORS%DEBHVOUIA$R%HVBLDFVJOIUHSDFKOLVJNFDLSKJVHGLRKDJSNGO$IQANVIPO$RSND*)(OVFINSDOLKIVBNFOIDSHJOIRGNTKLSNGHLKRDNSVBFIKODHJBNIO)
+// const token = await getAccessTokenSilently()
+export function addName(name, token) {
+    return request
     .post(rootUrl + '/names')
+    .set('Authorization', `Bearer ${token}`)
     .send({
       name: name,
     })

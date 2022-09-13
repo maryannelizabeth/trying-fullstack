@@ -31,3 +31,12 @@ function RandomGenerator() {
 }
 
 export default RandomGenerator
+
+// to make an unauthenticated request
+// 1. dispatch the action OR call the api function
+// 2. done
+
+// to make an authenticated request
+// 1. get an access token (getAccessTokenSilently) (async/await)
+// 2. dispatch the action OR call the api function WITH the token (set Authorization Bearer token)
+// 3. (on the server route) use checkJwt which gives you req.auth.sub (userId)

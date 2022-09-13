@@ -1,11 +1,15 @@
 const express = require('express')
 
 const db = require('../db/names')
+const checkJwt = require('../check-jwt')
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-  db.getNames()
+router.get('/', checkJwt, (req, res) => {
+  const userId = req.auth?.sub
+
+
+  db.getNames(userId)
     .then((results) => {
       res.json({ results })
    
@@ -16,11 +20,12 @@ router.get('/', (req, res) => {
     })
 })
 
-router.post('/', (req, res) => {
-  const namesData = req.body
+
+router.post('/', checkJwt, (req, res) => {
+  const userId = req.auth?.sub
   const name = req.body.name
 
-  db.addName(namesData)
+  db.addName({ name, userId })
     .then((ids) => {
       const id = ids[0]
       res.json({ id: id, name: name })

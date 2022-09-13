@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 const Form = () => {
   const dispatch = useDispatch()
 
-  function addName(e) {
+  function addName(e) { 
     if (e.keyCode === 13) {
       dispatch(fetchName(e.target.value))
       e.target.value = ''
