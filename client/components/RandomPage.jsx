@@ -4,18 +4,42 @@ import Form from './Form'
 import RandomStudent from './RandomStudent'
 import { fetchNames } from '../actions'
 import Nav from './Nav'
+import { useAuth0 } from '@auth0/auth0-react'
 
 function RandomGenerator() {
   const names = useSelector((state) => state.names)
   const dispatch = useDispatch()
+  const { isAuthenticated, getAccessTokenSilently } = useAuth0()
   useEffect(() => {
-    dispatch(fetchNames())
-  }, [])
+    if (!isAuthenticated) {
+      return <p>Please log in to use</p>
+    } else {
+      getAccessTokenSilently()
+        .then((token) => dispatch(fetchNames(token)))
+        .catch((err) => console.error(err))
+    }
+  }, [isAuthenticated])
 
+  //
+
+  // useEffect(() => {
+  //   if (!isAuthenticated) {
+  //     dispatch(clearLoggedInUser())
+  //   } else {
+  //     getAccessTokenSilently()
+  //
+  //       .then((userInDb) => {
+  //         userInDb
+  //           ? dispatch(updateLoggedInUser(userInDb))
+  //           : navigate('/register')
+  //       })
+  //       .catch((err) => console.error(err))
+  //   }
+  // }, [isAuthenticated])
 
   return (
     <>
-    <Nav />
+      <Nav />
       <div className="app">
         <h1>Random Generator</h1>
         <ul>

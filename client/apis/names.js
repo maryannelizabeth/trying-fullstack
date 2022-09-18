@@ -2,11 +2,13 @@ import request from 'superagent'
 
 const rootUrl = '/api/v1'
 
-export function getNames() {
-  return request.get(rootUrl + '/names').then((res) => {
-   
-    return res.body.results
-  })
+export function getNames(token) {
+  return request
+    .get(rootUrl + '/names')
+    .set('Authorization', `Bearer ${token}`)
+    .then((res) => {
+      return res.body.results
+    })
 }
 
 // export function addName(name) {
@@ -21,7 +23,7 @@ export function getNames() {
 // eaovupi;bhudpisorbvuipoaersdbvjkfhbgdsjklgvhy$AGHRFDOIUBVGIORS%DEBHVOUIA$R%HVBLDFVJOIUHSDFKOLVJNFDLSKJVHGLRKDJSNGO$IQANVIPO$RSND*)(OVFINSDOLKIVBNFOIDSHJOIRGNTKLSNGHLKRDNSVBFIKODHJBNIO)
 // const token = await getAccessTokenSilently()
 export function addName(name, token) {
-    return request
+  return request
     .post(rootUrl + '/names')
     .set('Authorization', `Bearer ${token}`)
     .send({

@@ -4,25 +4,21 @@ export const SET_NAMES = 'SET_NAMES'
 export const ADD_NAME = 'ADD_NAME'
 
 export function setNames(names) {
-
   return {
     type: SET_NAMES,
     payload: names,
   }
 }
 
-export function fetchNames() {
+export function fetchNames(token) {
   return (dispatch) => {
-    return getNames().then((names) => {
-     
+    return getNames(token).then((names) => {
       dispatch(setNames(names))
-     
     })
   }
 }
 
 export function addWord(name) {
- 
   return {
     type: ADD_NAME,
     payload: name,

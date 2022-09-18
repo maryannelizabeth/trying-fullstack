@@ -41,9 +41,6 @@ function Nav() {
           </NavLink>
         </IfNotAuthenticated>
       </NavGroup>
-      <button
-        onClick={async () => console.log(await getAccessTokenSilently())}
-      >CLICK ME</button>
     </>
   )
 }
