@@ -15,7 +15,11 @@ const delButton = (props) => {
       .catch((err) => console.error(err))
   }
 
-  return <button onClick={clickHandler}>X</button>
+  return (
+    <button className="delButton" onClick={clickHandler}>
+      X
+    </button>
+  )
 }
 
 export default delButton
