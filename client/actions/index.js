@@ -1,7 +1,8 @@
-import { getNames, addName } from '../apis/names'
+import { getNames, addName, deleteName } from '../apis/names'
 
 export const SET_NAMES = 'SET_NAMES'
 export const ADD_NAME = 'ADD_NAME'
+export const DEL_NAME = 'DEL_NAME'
 
 export function setNames(names) {
   return {
@@ -30,5 +31,20 @@ export function fetchName(name, token) {
     return addName(name, token).then((name) => {
       dispatch(addWord(name))
     })
+  }
+}
+
+//Dele
+
+export function delName(id) {
+  return {
+    type: DEL_NAME,
+    payload: id,
+  }
+}
+
+export function deletingName(id, token) {
+  return (dispatch) => {
+    return deleteName(id, token).then(() => dispatch(delName(id)))
   }
 }

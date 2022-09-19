@@ -4,9 +4,12 @@ import Form from './Form'
 import RandomStudent from './RandomStudent'
 import { fetchNames } from '../actions'
 import Nav from './Nav'
+import DeleteName from './DeleteName'
 import { useAuth0 } from '@auth0/auth0-react'
+import { useCacheUser } from '../auth0-utils'
 
 function RandomGenerator() {
+  useCacheUser()
   const names = useSelector((state) => state.names)
   const dispatch = useDispatch()
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
@@ -51,10 +54,14 @@ function RandomGenerator() {
         <h1>Random Generator</h1>
         <ul>
           {names.map((name) => (
-            <li key={name.id}>{name.name}</li>
+            <li key={name.id}>
+              {name.name}
+              <DeleteName id={name.id} />
+            </li>
           ))}
         </ul>
         <Form />
+        <br></br>
         <RandomStudent />
       </div>
     </>
