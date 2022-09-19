@@ -10,12 +10,19 @@ function RandomGenerator() {
   const names = useSelector((state) => state.names)
   const dispatch = useDispatch()
   const { isAuthenticated, getAccessTokenSilently } = useAuth0()
+
   useEffect(() => {
     if (!isAuthenticated) {
       return <p>Please log in to use</p>
     } else {
       getAccessTokenSilently()
-        .then((token) => dispatch(fetchNames(token)))
+        //Get
+        .then((token) => {
+          return dispatch(fetchNames(token))
+        })
+
+        //Post
+        // .then(() => dispatch(fetchName(name, saveToken)))
         .catch((err) => console.error(err))
     }
   }, [isAuthenticated])

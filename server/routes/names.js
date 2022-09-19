@@ -6,9 +6,9 @@ const checkJwt = require('../check-jwt')
 const router = express.Router()
 // /api/v1/names/
 router.get('/', checkJwt, (req, res) => {
-  const userId = req.auth?.sub
+  const id = req.auth?.sub
 
-  db.getNames(userId)
+  db.getNames(id)
     .then((results) => {
       res.json({ results })
     })
@@ -19,10 +19,11 @@ router.get('/', checkJwt, (req, res) => {
 })
 
 router.post('/', checkJwt, (req, res) => {
-  const userId = req.auth?.sub
+  const id = req.auth?.sub
   const name = req.body.name
 
-  db.addName({ name, userId })
+  db.addName({ name, id })
+
     .then((ids) => {
       const id = ids[0]
       res.json({ id: id, name: name })

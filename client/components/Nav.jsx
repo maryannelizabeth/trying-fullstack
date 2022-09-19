@@ -5,7 +5,7 @@ import { IfAuthenticated, IfNotAuthenticated } from './Authenticated'
 import { NavLink, NavGroup } from './Styled'
 
 function Nav() {
-  const { loginWithRedirect, logout, getAccessTokenSilently } = useAuth0()
+  const { loginWithRedirect, logout } = useAuth0()
   // thumbnail
   // username
   // email

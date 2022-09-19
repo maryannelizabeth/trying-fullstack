@@ -1,5 +1,6 @@
 import request from 'superagent'
 
+//const { getAccessTokenSilently } = useAuth0()
 const rootUrl = '/api/v1'
 
 export function getNames(token) {
@@ -21,8 +22,9 @@ export function getNames(token) {
 // }
 
 // eaovupi;bhudpisorbvuipoaersdbvjkfhbgdsjklgvhy$AGHRFDOIUBVGIORS%DEBHVOUIA$R%HVBLDFVJOIUHSDFKOLVJNFDLSKJVHGLRKDJSNGO$IQANVIPO$RSND*)(OVFINSDOLKIVBNFOIDSHJOIRGNTKLSNGHLKRDNSVBFIKODHJBNIO)
-// const token = await getAccessTokenSilently()
+
 export function addName(name, token) {
+  // const token = await getAccessTokenSilently()
   return request
     .post(rootUrl + '/names')
     .set('Authorization', `Bearer ${token}`)

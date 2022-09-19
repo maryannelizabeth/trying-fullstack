@@ -9,7 +9,7 @@ export function setNames(names) {
     payload: names,
   }
 }
-
+//GET
 export function fetchNames(token) {
   return (dispatch) => {
     return getNames(token).then((names) => {
@@ -24,10 +24,10 @@ export function addWord(name) {
     payload: name,
   }
 }
-
-export function fetchName(name) {
+//POST
+export function fetchName(name, token) {
   return (dispatch) => {
-    return addName(name).then((name) => {
+    return addName(name, token).then((name) => {
       dispatch(addWord(name))
     })
   }
