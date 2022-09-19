@@ -240,8 +240,7 @@ body {
   .delButton {
    /* overflow: hidden;*/
     position: relative;
-    top: -5;
-    bottom: 5;
+  
     border: none;
     padding: 0;
     width: 2em; height: 2em;

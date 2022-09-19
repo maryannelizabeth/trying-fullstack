@@ -1,7 +1,8 @@
 const connection = require('./connection')
 
-function getNames(db = connection) {
-  return db('Names').select()
+function getNames(auth0Id, db = connection) {
+  console.log(auth0Id)
+  return db('Names').select().where('auth0Id', auth0Id)
 }
 
 function addName(name, db = connection) {

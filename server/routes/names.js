@@ -6,10 +6,10 @@ const checkJwt = require('../check-jwt')
 const router = express.Router()
 // /api/v1/names/
 router.get('/', checkJwt, (req, res) => {
-  const id = req.auth?.sub
-  // const auth0Id = req.user?.sub
-  // console.log(auth0Id)
-  db.getNames(id)
+  //const id = req.auth?.sub
+  const auth0Id = req.user?.sub
+  console.log(auth0Id)
+  db.getNames(auth0Id)
     .then((results) => {
       res.json({ results })
     })
@@ -36,17 +36,17 @@ router.post('/', checkJwt, (req, res) => {
 })
 
 router.delete('/:id', checkJwt, (req, res) => {
-  // const auth0Id = req.user?.sub
+  const auth0Id = req.user?.sub
   console.log(req.params.id)
   db.delName(Number(req.params.id))
-    .then(() => db.getNames())
+    .then(() => db.getNames(auth0Id))
     .then((names) => res.json({ names }))
     .catch((err) => {
       console.error(err)
       if (err.message === 'Unauthorized') {
         res
           .status(403)
-          .send('Unauthorized: Only the user who added the fruit may update it')
+          .send('Unauthorized: Only the user who added the name may delete it')
       } else {
         res.status(500).send(err.message)
       }
