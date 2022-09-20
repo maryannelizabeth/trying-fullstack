@@ -30,39 +30,31 @@ function RandomGenerator() {
     }
   }, [isAuthenticated])
 
-  //
-
-  // useEffect(() => {
-  //   if (!isAuthenticated) {
-  //     dispatch(clearLoggedInUser())
-  //   } else {
-  //     getAccessTokenSilently()
-  //
-  //       .then((userInDb) => {
-  //         userInDb
-  //           ? dispatch(updateLoggedInUser(userInDb))
-  //           : navigate('/register')
-  //       })
-  //       .catch((err) => console.error(err))
-  //   }
-  // }, [isAuthenticated])
-
   return (
     <>
       <Nav />
       <div className="app">
-        <h1>Random Generator</h1>
-        <ul>
-          {names.map((name) => (
-            <li key={name.id}>
-              {name.name}
-              <DeleteName id={name.id} />
-            </li>
-          ))}
-        </ul>
-        <Form />
         <br></br>
-        <RandomStudent />
+        <div className="randomNamesList">
+          {' '}
+          <div className="enterStudentName">
+            <h5>Add student name to list:</h5>
+            <Form />
+          </div>
+          <ol>
+            {names.map((name) => (
+              <li key={name.id}>
+                {name.name}
+                <DeleteName id={name.id} />
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <br></br>
+        <div className="RandomStudentButtonAppDiv">
+          <RandomStudent />
+        </div>
       </div>
     </>
   )

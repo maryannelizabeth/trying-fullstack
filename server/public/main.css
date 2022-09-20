@@ -7,7 +7,39 @@ body {
   h1{
     color: #E38B29
   }
+ 
   
+  /* CSS */
+  .button-1 {
+    background-color: #F1A661;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-1:hover{
+    background-color: #E38B29;
+  }
   /************** HEADER ******************/
   .header {
     margin: auto;
@@ -237,10 +269,46 @@ body {
       }
   
   /***********RANDOM GEN PAGE*****************/
+  
+ .app{
+  width: 100%;
+  height: auto;
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  
+  }
+
+  .randomNamesList{
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+   /* height: 180px;*/
+    width: 200px;
+    border-radius: 15px;
+    border: 2px solid silver;
+    box-shadow: 0 0 5px 25 px;
+    flex-direction: column ;
+    
+    flex-flow: wrap;
+    margin-right: 30px;
+  
+
+  }
+
+  .enterStudentName{
+    margin: auto;
+    
+  }
+
+  .RandomStudentButtonAppDiv{
+
+  }
   .delButton {
    /* overflow: hidden;*/
     position: relative;
-  
     border: none;
     padding: 0;
     width: 2em; height: 2em;
@@ -252,27 +320,42 @@ body {
     cursor: pointer;
     opacity: 0.4;
    font-size: 6px;
-    /* button : focus {
-      outline: solid 0 transparent;
-      box-shadow: 0 0 0 2px #8ed0f9
-    }
-    
-    &:hover {
-      background: rgba(29, 161, 142, .1)
-    }
-    
-    &:before, &:after {
-      position: absolute;
-      top: 15%; left: calc(50% - .0625em);
-      width: .125em; height: 70%;
-      border-radius: .125em;
-      transform: rotate(45deg);
-      background: currentcolor;
-      content: ''
-    }
-    
-    &:after { transform: rotate(-45deg); } */
   }
+
+  
+
+  /****RANDOM STUDNET PAGE***/
+  .RandomStudentButtonDiv{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    margin-top: 30px;
+
+  }
+ 
+  .randomStudentResultDiv{
+    position: relative;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 350px;
+    border-radius: 15px;
+    border: 2px solid silver;
+    box-shadow: 0 0 5px 25 px;
+    margin-left: 30px;
+  }
+
+  .resultP{
+    position: absolute;
+  top: 8px;
+  left: 16px;
+  font-size: 18px;
+
+   
+  }
+
     /* @media (768px){
         .diceDiv {
           width:90%;

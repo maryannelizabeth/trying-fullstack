@@ -18,12 +18,10 @@ function StartTimer({ seconds, setSeconds, minutes, setMinutes }) {
   let startClick = () => {
     updateCountdown()
     setInterval(updateCountdown, 1000)
-
-
   }
   return (
     <div className="startCountdownButton">
-      <button type="button" onClick={startClick}>
+      <button className="button-1" type="button" onClick={startClick}>
         Start Countdown!
       </button>
     </div>

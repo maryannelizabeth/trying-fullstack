@@ -15,7 +15,7 @@ const Form = () => {
     }
   }
 
-  return <input placeholder="enter word" onKeyUp={addName} />
+  return <input placeholder="enter name" onKeyUp={addName} />
 }
 
 export default Form

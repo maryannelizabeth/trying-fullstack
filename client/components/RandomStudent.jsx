@@ -13,8 +13,15 @@ function Randomise() {
 
   return (
     <>
-      <button onClick={handleClick}>Random Button</button>
-      <p>Result:{result} </p>
+      <div className="randomStudentResultDiv">
+        <p className="resultP"> Result: </p>
+        <h1> {result} </h1>
+      </div>
+      <div className="RandomStudentButtonDiv">
+        <button className="button-1" onClick={handleClick}>
+          Generate Random Student
+        </button>
+      </div>
     </>
   )
 }

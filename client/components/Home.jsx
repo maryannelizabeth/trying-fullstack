@@ -46,14 +46,14 @@ function Home() {
             {' '}
             <img
               className="img"
-              src="./images/wheel-of-fortune.png"
+              src="./images/question.png"
               alt="spin the wheel"
               width="150px"
             />
           </Link>
           <br></br>
           <br></br>
-          Spin The Wheel!
+          Random Student Generator!
         </p>
       </div>
       <footer>

@@ -22,12 +22,11 @@ function Footer() {
         </a>{' '}
         <a
           className="footerA"
-          href="https://www.flaticon.com/free-icons/wheel-of-fortune"
-          title="wheel of fortune icons"
+          href="https://www.flaticon.com/free-icons/question"
+          title="question icons"
         >
-          {' '}
-          Wheel of fortune icons created by Freepik - Flaticon,{' '}
-        </a>
+          Question icons created by Freepik - Flaticon{' '}
+        </a>{' '}
         <a
           className="footerA"
           href="https://www.flaticon.com/free-icons/toolbox"
