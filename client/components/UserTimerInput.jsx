@@ -3,8 +3,15 @@ import TimerDisplay from './TimerDisplay'
 import StartTimer from './StartTimer'
 
 function UserTimerInput() {
-  let [minutes, setMinutes] = useState(0)
-  let [seconds, setSeconds] = useState(0)
+  let [minutes, setMinutes] = useState()
+  let [seconds, setSeconds] = useState()
+
+  if (seconds < 10) {
+    seconds = `0${seconds}`
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`
+  }
 
   const [print, setPrint] = useState(false)
 
@@ -70,8 +77,8 @@ function UserTimerInput() {
       </div>
       <div>
         <TimerDisplay
-          timerMinutes={print ? minutes : 0} // if something is less than 10 display 0+print seconds
-          timerSeconds={print ? seconds : 0}
+          timerMinutes={print ? minutes : '00'} // if something is less than 10 display 0+print seconds
+          timerSeconds={print ? seconds : '00'}
         />
       </div>
       <div>
